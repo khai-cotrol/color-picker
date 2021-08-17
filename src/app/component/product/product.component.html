@@ -1,0 +1,22 @@
+<div class="container" xmlns="http://www.w3.org/1999/html">
+  <h2>List of product</h2>
+  <button class="btn btn-success" (click)="showHideImage()">show /Hide image</button>
+  <input type="color" [(ngModel)]="textcolor">
+
+  <table class='table'[style.color]="textcolor" >
+    <tr  >
+      <td *ngFor="let product of products; let i =index">
+        <div class="card" style="width: 18rem;"  >
+          <img [hidden]="showImage"  src="{{product.img}}" class="card-img-top" width="18rem" alt="...">
+          <div class="card-body">
+              <h6 ><p style="text-align: center">{{product.categories}}</p></h6>
+            <br>
+            <h4 ><p style="text-align: center">{{product.name}}</p></h4>
+            <br>
+            <h6><p style="text-align: center">{{product.price}}VND</p></h6>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
